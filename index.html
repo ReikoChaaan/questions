@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CARDS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9c5d1;
+      color: #333;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #222;
+    }
+    .card {
+      background: #fff;
+      border: 2px solid #e0a0b0;
+      border-radius: 16px;
+      padding: 30px;
+      width: 300px;
+      min-height: 200px;
+      margin-bottom: 20px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .card.active {
+      display: flex;
+    }
+    .question {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+    .description {
+      font-size: 16px;
+      color: #555;
+    }
+    button {
+      background-color: #e0678d;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 30px;
+    }
+    button:hover {
+      background-color: #d1567b;
+    }
+  </style>
+</head>
+<body>
+  <h1>CARDS</h1>
+  <button onclick="showRandomCard()">Losuj pytanie</button>
+
+  <div class="card">
+    <div class="question">Co daje mi poczucie bycia kochaną/kochanym?</div>
+    <div class="description">(Jak rozumiem okazywanie uczuć, co mnie uspokaja, zbliża? Przykłady: wspólne rozmowy, przytulanie, słowa, gesty, obecność…)</div>
+  </div>
+  <div class="card">
+    <div class="question">Co sprawia, że czuję się oddalona/oddalony?</div>
+    <div class="description">(Co mnie odsuwa, wywołuje smutek, dystans? Przykłady: brak odpowiedzi, ironia, ciągłe żarty, znikanie bez słowa…)</div>
+  </div>
+  <div class="card">
+    <div class="question">Czego potrzebuję w związku, żeby czuć się bezpiecznie i spokojnie?</div>
+    <div class="description">(Zasady, rytuały, konkretne rzeczy, które pomagają mi w codzienności.)</div>
+  </div>
+  <div class="card">
+    <div class="question">Czego nie chcę w związku?</div>
+    <div class="description">(Co mnie przytłacza, zniechęca, czego nie jestem w stanie przyjąć?)</div>
+  </div>
+  <div class="card">
+    <div class="question">Jakie mam trudności, o których warto wiedzieć?</div>
+    <div class="description">(Np. problemy z wyrażaniem emocji, lęki, sposoby reagowania w stresie.)</div>
+  </div>
+  <div class="card">
+    <div class="question">Jak mogę dawać Ci więcej bliskości?</div>
+    <div class="description">(Jak mogę się starać bardziej z uwzględnieniem Twoich potrzeb?)</div>
+  </div>
+  <div class="card">
+    <div class="question">Czego oczekuję w codziennym kontakcie?</div>
+    <div class="description">(Ile kontaktu, jaka forma, jak często, co mnie cieszy?)</div>
+  </div>
+  <div class="card">
+    <div class="question">Jakie są moje granice?</div>
+    <div class="description">(Co jest dla mnie za dużo, co mnie przytłacza, czego nie chcę przekraczać.)</div>
+  </div>
+  <div class="card">
+    <div class="question">Co chcę zbudować razem z Tobą?</div>
+    <div class="description">(Wspólna wizja — nie musi być bardzo poważna. Chodzi o kierunek, marzenia, wyobrażenia.)</div>
+  </div>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+    function showRandomCard() {
+      cards.forEach(card => card.classList.remove('active'));
+      const index = Math.floor(Math.random() * cards.length);
+      cards[index].classList.add('active');
+    }
+  </script>
+</body>
+</html>
